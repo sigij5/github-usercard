@@ -38,6 +38,13 @@ axios.get('https://api.github.com/users/sigij5')
 
 
   const cards = document.querySelector('.cards')
+//   const cardOpen = document.querySelector('.cards h3')
+
+//   cardOpen.forEach(card =>{
+//     card.addEventListener('click', event =>{
+//     cards.classList.toggle('.card-open')
+//   })
+// })
 
   const followingArray =[]
 /*
@@ -64,6 +71,9 @@ axios.get('https://api.github.com/users/sigij5')
     user, and adding that card to the DOM.
 */
 
+/**OLD HARDCODED FOLLOWING ARRAY */
+
+
 // const followingArray = [
 //   'isaac-gorman',
 //   'JDMTias',
@@ -74,17 +84,17 @@ axios.get('https://api.github.com/users/sigij5')
 
 
 
-followingArray.forEach(user =>{
-  axios.get(`https://api.github.com/users/${user}`)
-    .then(response =>{
-      const userInfo = response.data
-      const userCard = cardCreator(userInfo)
-      cards.appendChild(userCard)
-    })
-    .catch(error =>{
-      console.log('error', error)
-    })
-})
+// followingArray.forEach(user =>{
+//   axios.get(`https://api.github.com/users/${user}`)
+//     .then(response =>{
+//       const userInfo = response.data
+//       const userCard = cardCreator(userInfo)
+//       cards.appendChild(userCard)
+//     })
+//     .catch(error =>{
+//       console.log('error', error)
+//     })
+// })
 
 
 /*
@@ -120,17 +130,8 @@ function cardCreator(userObj){
   const following = document.createElement('p')
   const bio = document.createElement('p')
 
-  card.appendChild(img)
-  card.appendChild(info)
-  info.appendChild(name)
-  info.appendChild(username)
-  info.appendChild(location)
-  info.appendChild(location)
-  info.appendChild(profile)
-  info.appendChild(link)
-  info.appendChild(followers)
-  info.appendChild(following)
-  info.appendChild(bio)
+  card.append(img, info)
+  info.append(name, username, location, profile, link, followers, following, bio)
 
   card.classList.add('card')
   img.src = userObj.avatar_url
