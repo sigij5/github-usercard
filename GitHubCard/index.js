@@ -131,7 +131,7 @@ function cardCreator(userObj){
   const bio = document.createElement('p')
 
   card.append(img, info)
-  info.append(name, username, location, profile, link, followers, following, bio)
+  info.append(name, username, location, profile, followers, following, bio)
 
   card.classList.add('card')
   img.src = userObj.avatar_url
@@ -145,6 +145,9 @@ function cardCreator(userObj){
   link.target = '_blank'
   link.innerHTML = userObj.html_url
   profile.textContent = `Profile: `
+
+  profile.appendChild(link)
+
   followers.textContent = `Followers: ${userObj.followers}`
   following.textContent = `Following: ${userObj.following}`
   bio.textContent = `Bio: ${userObj.bio}`
