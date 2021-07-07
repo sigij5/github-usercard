@@ -99,7 +99,13 @@ body {
   box-shadow: 0 1px 6px -2px #000;
   background-color: #FFF;
   margin-bottom: 30px;
+  /* height: 100px;
+  overflow: hidden; */
 }
+
+/* .card.card-open{
+  height:400px;
+} */
 
 .card img {
   width: 150px;
